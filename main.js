@@ -1,4 +1,3 @@
-
 // Wait till document is ready before calling this code
 // If you add script tag at bottom of document, this is not needed
 $(document).ready(function() {
@@ -114,4 +113,34 @@ $(document).ready(function() {
     $("#remove-button").on("click", function(){
         $("button").remove();
     });
+
+    // ┌────────────────────────────────────┐
+    // │   Adding animations using jQuery   │	
+    // └────────────────────────────────────┘
+    //let isVisible = true;
+    $("#remove-button").after("<br><br><button id=\"hide-button\">Toggle H1</button>");
+    $("#hide-button").on("click", function(){
+        $("h1").slideUp().slideDown().animate({opacity: 0.5});
+
+        // if(isVisible){
+        //     $("h1").hide();
+        //     $("#hide-button").text("Show h1")
+        //     isVisible = false;
+        // }else{
+        //     $("h1").show();
+        //     $("#hide-button").text("Hide h1")
+        //     isVisible = true;
+        // }
+    });
+
+    // .fadeOut()
+    // .fadeIn()
+    // .fadeToggle()
+
+    // .slideOut()
+    // .slideIn()
+    // .slideToggle()
+
+    // $("h1").animate({opacity: 0.5});
+
 });
