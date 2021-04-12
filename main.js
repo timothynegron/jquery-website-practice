@@ -92,4 +92,26 @@ $(document).ready(function() {
     $("h1").on("mouseover", function(){
         $("h1").css("color", "blue");
     })
+
+    // ┌──────────────────────────────────┐
+    // │   Adding elements using jQuery   │	
+    // └──────────────────────────────────┘
+    // Create a button element before the h1 element (outside h1)
+    $("h1").before("<button>Before New Button</button>");
+
+    // Create a button element after the h1 element (outside h1)
+    $("h1").after("<button>After New Button</button>");
+
+    // Create just after the opening tag (Inside h1)
+    $("h1").prepend("<button>Prepend New Button</button>");
+
+    // Create just before the ending tag (Inside h1)
+    $("h1").append("<button>Append New Button</button>");
+
+    // Get rid of all the elements
+    //$("button").remove();
+    $("input").after("<br><br><button id=\"remove-button\">Remove All Buttons</button>");
+    $("#remove-button").on("click", function(){
+        $("button").remove();
+    });
 });
